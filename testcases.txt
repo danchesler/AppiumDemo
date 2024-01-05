@@ -1,0 +1,35 @@
+LEVEL SANITY:
+
+	make purchase:
+		open app
+		login
+		add items to cart
+		go to cart
+		checkout
+		shipping info
+		payment info
+		review order
+		place order
+		checkout complete
+		logout
+
+LEVEL A:
+
+	make purchase when not logged in
+	scroll to item
+	add customized (color, quantity) item to cart
+	sort catalogue by
+	
+	hamburger menu items:
+		about
+		reset app
+		login
+		
+
+LEVEL AB:
+	hamburger menu items
+		webview
+		qr code scanner
+		geo location
+		drawing
+		fingerprint

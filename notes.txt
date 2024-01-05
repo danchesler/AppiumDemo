@@ -1,0 +1,15 @@
+page objects:
+	catalogue (homepage)
+	cart
+	product 
+	webview
+	qr code
+	geolocation
+	drawing
+	about
+	
+	
+globalpage objects:
+	hamburger menu
+	cart icon
+	title
