@@ -10,6 +10,7 @@ page objects:
 	
 	
 globalpage objects:
+	hamburger icon
 	hamburger menu
 	cart icon
 	title

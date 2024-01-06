@@ -1,5 +1,6 @@
 LEVEL SANITY:
 
+	TC1
 	make purchase:
 		open app
 		login
@@ -14,12 +15,14 @@ LEVEL SANITY:
 		logout
 
 LEVEL A:
-
+	
+	TC1
 	make purchase when not logged in
 	scroll to item
 	add customized (color, quantity) item to cart
 	sort catalogue by
 	
+	TC2
 	hamburger menu items:
 		about
 		reset app
@@ -33,3 +36,4 @@ LEVEL AB:
 		geo location
 		drawing
 		fingerprint
+		saucebotvideo
