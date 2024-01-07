@@ -39,6 +39,11 @@ public class PageCommon extends AndroidActions {
 	@AndroidFindBy(className="android.widget.Button")
 	private WebElement successLogoutBtn;
 	
+	//Element getters
+	public WebElement getMenuElement() {
+		return hamburgerMenu;
+	}
+	
 	//Header action methods
 	public MyCartPage goToCart() {
 		cart.click();

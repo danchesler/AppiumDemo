@@ -21,7 +21,7 @@ public class CheckoutCompletePage extends PageCommon {
 	
 	public CataloguePage continueShopping() throws InterruptedException {
 		continueShoppingBtn.click();
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		return new CataloguePage(driver);
 	}
 	

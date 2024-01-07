@@ -40,8 +40,6 @@ public class BaseTest extends AppiumUtils {
 		
 		driver = new AndroidDriver(appiumServer.getUrl(), options);
 		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
 		cataloguePage = new CataloguePage(driver);
 		
 	}

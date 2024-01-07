@@ -6,8 +6,8 @@
       <class name="testCases.TC1_MakePurchase">
         <methods>
           <include name="ConfigureAppium"/>
-          <include name="SanityPurchase" invocation-numbers="0"/>
           <include name="tearDown"/>
+          <include name="SanityPurchase" invocation-numbers="0"/>
         </methods>
       </class> <!-- testCases.TC1_MakePurchase -->
     </classes>

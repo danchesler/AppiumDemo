@@ -54,6 +54,7 @@ public class TC1_MakePurchase extends BaseTest {
 		cataloguePage = complete.continueShopping();
 		
 		//logout
+		waitForElementToAppear(cataloguePage.getMenuElement(), driver);
 		cataloguePage.openMenu();
 		loginPage = cataloguePage.logout();
 	}
