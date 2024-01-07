@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import utilities.AndroidActions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -22,6 +23,9 @@ public class PageCommon extends AndroidActions {
 	//header locators
 	@AndroidFindBy(accessibility="cart badge")
 	private WebElement cart;
+
+	@AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc='cart badge']/android.widget.TextView")
+	private WebElement cartCount;
 	
 	//hamburger menu locators
 	@AndroidFindBy(accessibility="open menu")
@@ -44,12 +48,20 @@ public class PageCommon extends AndroidActions {
 		return hamburgerMenu;
 	}
 	
+	public WebElement getCartQuantityElement() {
+		return cartCount;
+	}
+	
+	public int getCartQuantity() {
+		int quantity = Integer.parseInt(cartCount.getText());
+		return quantity;
+	}
+	
 	//Header action methods
 	public MyCartPage goToCart() {
 		cart.click();
 		return new MyCartPage(driver);
 	}
-	
 	
 	//Hamburger menu action methods
 	public void openMenu() {

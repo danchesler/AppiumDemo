@@ -1,6 +1,5 @@
 to do: 
 write assertions for tc1
-add explicit wait
 
 
 LEVEL SANITY:

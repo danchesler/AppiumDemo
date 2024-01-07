@@ -16,8 +16,23 @@ public class CheckoutReviewOrderPage extends PageCommon {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
+	@AndroidFindBy(xpath="//android.widget.TextView[contains(@text,'Review')]")
+	private WebElement reviewOrderHeader;
+	
 	@AndroidFindBy(accessibility="Place Order button")
 	private WebElement placeOrderBtn;
+	
+	//Element getters
+	
+	public WebElement getReviewOrderElement() {
+		return reviewOrderHeader;
+	}
+	
+	public String getReviewOrderText() {
+		return reviewOrderHeader.getText();
+	}
+	
+	//Actions methods
 	
 	public CheckoutCompletePage placeOrder() {
 		placeOrderBtn.click();

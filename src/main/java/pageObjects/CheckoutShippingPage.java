@@ -18,6 +18,9 @@ public class CheckoutShippingPage extends PageCommon {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
+	@AndroidFindBy(xpath="//android.widget.TextView[contains(@text,'shipping')]")
+	private WebElement enterShippingHeader;
+	
 	@AndroidFindBy(accessibility="Full Name* input field")
 	private WebElement nameField;
 	
@@ -41,6 +44,11 @@ public class CheckoutShippingPage extends PageCommon {
 	
 	@AndroidFindBy(accessibility="To Payment button")
 	private WebElement toPaymentBtn;
+	
+	//Element getters
+	public String getEnterShippingText() {
+		return enterShippingHeader.getText();
+	}
 	
 	public void enterShippingDetails(HashMap<String, String> data) {
 		nameField.sendKeys(data.get("fullname"));

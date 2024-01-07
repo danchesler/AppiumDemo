@@ -16,12 +16,19 @@ public class CheckoutCompletePage extends PageCommon {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
+	@AndroidFindBy(xpath="//android.widget.TextView[contains(@text,'Complete')]")
+	private WebElement checkoutCompleteText;
+	
 	@AndroidFindBy(accessibility="Continue Shopping button")
 	private WebElement continueShoppingBtn;
 	
+	//Element getters
+	public String getCheckoutCompleteText() {
+		return checkoutCompleteText.getText();
+	}
+	
 	public CataloguePage continueShopping() throws InterruptedException {
 		continueShoppingBtn.click();
-		//Thread.sleep(1000);
 		return new CataloguePage(driver);
 	}
 	

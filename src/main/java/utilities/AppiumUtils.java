@@ -32,6 +32,7 @@ public class AppiumUtils {
 		return appiumServer;
 	}
 	
+	//Gets data from json for @DataProvider
 	public List<HashMap<String, String>> getJsonData(String jsonFilePath) throws IOException {
 		String jsonContent = FileUtils.readFileToString(new File(jsonFilePath), StandardCharsets.UTF_8);
 		ObjectMapper mapper = new ObjectMapper();
@@ -39,6 +40,12 @@ public class AppiumUtils {
 		
 		return data;
 		
+	}
+	
+	//Remove $ sign from text and return its number
+	public double formatPrice(String price) {
+		Double formatted = Double.parseDouble(price.substring(1));
+		return formatted;
 	}
 	
 	//Explicit wait 10 seconds

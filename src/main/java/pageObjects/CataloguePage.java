@@ -21,6 +21,9 @@ public class CataloguePage extends PageCommon {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
+	@AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc='container header']/android.widget.TextView")
+	private WebElement productsHeader;
+	
 	@AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc='store item']")
 	private List<WebElement> products;
 	
@@ -31,6 +34,11 @@ public class CataloguePage extends PageCommon {
 		
 		return new ProductPage(driver);
 		
+	}
+	
+	//Element getters
+	public String getProductsText() {
+		return productsHeader.getText();
 	}
 	
 }
