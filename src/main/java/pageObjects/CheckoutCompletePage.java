@@ -7,21 +7,22 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class ProductPage extends PageCommon {
+public class CheckoutCompletePage extends PageCommon {
 	private AndroidDriver driver;
 	
-	public ProductPage(AndroidDriver driver) {
+	public CheckoutCompletePage(AndroidDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
-
-	@AndroidFindBy(accessibility="Add To Cart button")
-	private WebElement addToCart;
 	
-	public void addToCart() {
-		addToCart.click();
+	@AndroidFindBy(accessibility="Continue Shopping button")
+	private WebElement continueShoppingBtn;
+	
+	public CataloguePage continueShopping() throws InterruptedException {
+		continueShoppingBtn.click();
+		Thread.sleep(1000);
+		return new CataloguePage(driver);
 	}
-	
 	
 }

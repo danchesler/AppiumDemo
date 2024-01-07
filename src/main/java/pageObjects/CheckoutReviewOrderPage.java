@@ -7,21 +7,21 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class ProductPage extends PageCommon {
+public class CheckoutReviewOrderPage extends PageCommon {
 	private AndroidDriver driver;
 	
-	public ProductPage(AndroidDriver driver) {
+	public CheckoutReviewOrderPage(AndroidDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
-
-	@AndroidFindBy(accessibility="Add To Cart button")
-	private WebElement addToCart;
 	
-	public void addToCart() {
-		addToCart.click();
+	@AndroidFindBy(accessibility="Place Order button")
+	private WebElement placeOrderBtn;
+	
+	public CheckoutCompletePage placeOrder() {
+		placeOrderBtn.click();
+		return new CheckoutCompletePage(driver);
 	}
-	
 	
 }

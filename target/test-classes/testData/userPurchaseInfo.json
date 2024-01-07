@@ -1,7 +1,19 @@
 [
 	{
 		"username" : "bob@example.com",
-		"password" : "10203040"
+		"password" : "10203040",
+		
+		"fullname" : "Bob Fisher",
+		"address1" : "123 Test Ave",
+		"address2" : "999",
+		"city"	: "San Diego",
+		"state" : "California",
+		"zipcode" : "92131",
+		"country" : "United States", 
+		
+		"cardnumber" : "1234 1234 1234 123",
+		"expdate" : "0626",
+		"securitycode" : "345"
 	}
 
 

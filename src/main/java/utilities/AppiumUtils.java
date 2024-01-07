@@ -35,4 +35,6 @@ public class AppiumUtils {
 		return data;
 		
 	}
+	
+	//add explicit wait
 }
