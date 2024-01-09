@@ -1,11 +1,11 @@
 to do: 
-write assertions for tc1
+tc1 purchase not logged in
 
 
 LEVEL SANITY:
 
-	TC1
-	make purchase:
+	TC1 make purchase 
+	make purchase 1:
 		open app
 		login
 		add items to cart
@@ -17,11 +17,25 @@ LEVEL SANITY:
 		place order
 		checkout complete
 		logout
-
+		
+	make purchase not logged in
+		open app
+		scroll down to bottom
+		add items
+		login
+		checkout
+			address
+			payment
+		review
+		place order
+		checkout complete
+		continue shopping
+		logout
+		
+		
+		
 LEVEL A:
 	
-	TC1
-	make purchase when not logged in
 	scroll to item
 	add customized (color, quantity) item to cart
 	sort catalogue by

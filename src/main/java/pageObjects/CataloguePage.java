@@ -27,6 +27,10 @@ public class CataloguePage extends PageCommon {
 	@AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc='store item']")
 	private List<WebElement> products;
 	
+	@AndroidFindBy(xpath="//android.widget.TextView[contains(@text,'Terms')]")
+	private WebElement footer;
+	
+	
 	public ProductPage selectProduct(int index) {
 		WebElement product = products.get(index);
 		WebElement image = product.findElement(AppiumBy.className("android.widget.ImageView"));
@@ -39,6 +43,14 @@ public class CataloguePage extends PageCommon {
 	//Element getters
 	public String getProductsText() {
 		return productsHeader.getText();
+	}
+	
+	public WebElement getFooterElement() {
+		return footer;
+	}
+	
+	public String getFooterText() {
+		return footer.getText();
 	}
 	
 }

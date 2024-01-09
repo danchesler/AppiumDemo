@@ -47,4 +47,10 @@ public class LoginPage extends PageCommon {
 		loginBtn.click();
 		return new CataloguePage(driver);
 	}
+	
+	public CheckoutShippingPage checkoutAfterLogin() {
+		loginBtn.click();
+		return new CheckoutShippingPage(driver);
+	}
+	
 }

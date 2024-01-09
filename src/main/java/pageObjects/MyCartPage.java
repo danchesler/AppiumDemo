@@ -21,6 +21,9 @@ public class MyCartPage extends PageCommon {
 	@AndroidFindBy(xpath="//android.widget.TextView[@content-desc='product price']")
 	private List<WebElement> prices;
 	
+	@AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc='counter amount']/android.widget.TextView")
+	private List<WebElement> quantities;
+	
 	@AndroidFindBy(accessibility="total price")
 	private WebElement totalPrice;
 	
@@ -32,6 +35,11 @@ public class MyCartPage extends PageCommon {
 		return new CheckoutShippingPage(driver);
 	}
 	
+	public LoginPage proceedToLoginBeforeCheckout() {
+		checkout.click();
+		return new LoginPage(driver);
+	}
+	
 	//Element getters
 	public double getFormattedTotalPrice() {
 		String priceStr = totalPrice.getText();
@@ -41,7 +49,7 @@ public class MyCartPage extends PageCommon {
 	public double getSummedPrice() {
 		double sum = 0;
 		for (int i = 0; i < prices.size(); i++) {
-			sum += formatPrice(prices.get(i).getText());
+			sum += formatPrice(prices.get(i).getText()) * Integer.parseInt(quantities.get(i).getText());
 		}
 		return sum;
 	}

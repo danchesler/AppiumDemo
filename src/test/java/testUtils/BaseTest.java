@@ -42,6 +42,7 @@ public class BaseTest extends AppiumUtils {
 		
 		cataloguePage = new CataloguePage(driver);
 		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
 	@AfterTest
