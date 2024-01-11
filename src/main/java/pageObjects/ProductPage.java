@@ -27,6 +27,9 @@ public class ProductPage extends PageCommon {
 	@AndroidFindBy(accessibility="red circle")
 	private WebElement redColor;
 	
+	@AndroidFindBy(accessibility="blue circle")
+	private WebElement blueColor;
+	
 	@AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc='counter amount']/android.widget.TextView")
 	private WebElement quantity;
 	
@@ -57,6 +60,9 @@ public class ProductPage extends PageCommon {
 				break;
 			case "red": 
 				redColor.click();
+				break;
+			case "blue": 
+				blueColor.click();
 				break;
 		}
 	}

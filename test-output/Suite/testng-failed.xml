@@ -9,8 +9,9 @@
       <class name="testCases.TC1_MakePurchase">
         <methods>
           <include name="ConfigureAppium"/>
-          <include name="SanityPurchase" invocation-numbers="0"/>
+          <include name="GoToHomePage"/>
           <include name="tearDown"/>
+          <include name="ReviewOrderVerification" invocation-numbers="0"/>
         </methods>
       </class> <!-- testCases.TC1_MakePurchase -->
     </classes>

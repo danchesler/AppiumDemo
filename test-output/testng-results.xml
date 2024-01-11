@@ -2,27 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-10T17:41:41 PST" name="Suite" finished-at="2024-01-10T17:42:59 PST" duration-ms="77652">
+  <suite started-at="2024-01-11T15:33:47 PST" name="Suite" finished-at="2024-01-11T15:35:02 PST" duration-ms="75483">
     <groups>
     </groups>
-    <test started-at="2024-01-10T17:41:41 PST" name="SanityTest" finished-at="2024-01-10T17:42:59 PST" duration-ms="77652">
+    <test started-at="2024-01-11T15:33:47 PST" name="SanityTest" finished-at="2024-01-11T15:35:02 PST" duration-ms="75483">
       <class name="testCases.TC1_MakePurchase">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC1_MakePurchase@5a18cd76]" started-at="2024-01-10T17:41:41 PST" name="ConfigureAppium" finished-at="2024-01-10T17:41:56 PST" duration-ms="14639" status="PASS">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC1_MakePurchase@5443d039]" started-at="2024-01-11T15:33:47 PST" name="ConfigureAppium" finished-at="2024-01-11T15:33:56 PST" duration-ms="8989" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureAppium -->
-        <test-method signature="SanityPurchase(java.util.HashMap)[pri:0, instance:testCases.TC1_MakePurchase@5a18cd76]" started-at="2024-01-10T17:41:56 PST" name="SanityPurchase" data-provider="getUserPurchaseInfo" finished-at="2024-01-10T17:42:55 PST" duration-ms="59499" status="PASS">
+        <test-method is-config="true" signature="GoToHomePage()[pri:0, instance:testCases.TC1_MakePurchase@5443d039]" started-at="2024-01-11T15:33:56 PST" name="GoToHomePage" finished-at="2024-01-11T15:33:58 PST" duration-ms="2550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GoToHomePage -->
+        <test-method signature="ReviewOrderVerification(java.util.HashMap)[pri:0, instance:testCases.TC1_MakePurchase@5443d039]" started-at="2024-01-11T15:33:58 PST" name="ReviewOrderVerification" data-provider="getUserPurchaseInfo" finished-at="2024-01-11T15:34:59 PST" duration-ms="60459" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{country=United States, address2=999, city=San Diego, address1=123 Test Ave, zipcode=92131, password=10203040, fullname=Bob Fisher, state=California, cardnumber=1234 1234 1234 123, securitycode=345, username=bob@example.com, expdate=0626}]]>
+                <![CDATA[{country=United States, address2=999, city=San Diego, address1=123 Test Ave, zipcode=92131, password=10203040, productcolor=blue, fullname=Bob Fisher, state=California, cardnumber=1234 1234 1234 123, securitycode=345, username=bob@example.com, expdate=06/26}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SanityPurchase -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC1_MakePurchase@5a18cd76]" started-at="2024-01-10T17:42:55 PST" name="tearDown" finished-at="2024-01-10T17:42:59 PST" duration-ms="3344" status="PASS">
+        </test-method> <!-- ReviewOrderVerification -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC1_MakePurchase@5443d039]" started-at="2024-01-11T15:34:59 PST" name="tearDown" finished-at="2024-01-11T15:35:02 PST" duration-ms="3299" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

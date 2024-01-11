@@ -3,6 +3,8 @@
 		"username" : "bob@example.com",
 		"password" : "10203040",
 		
+		"productcolor" : "blue",
+		
 		"fullname" : "Bob Fisher",
 		"address1" : "123 Test Ave",
 		"address2" : "999",
@@ -12,7 +14,7 @@
 		"country" : "United States", 
 		
 		"cardnumber" : "1234 1234 1234 123",
-		"expdate" : "0626",
+		"expdate" : "06/26",
 		"securitycode" : "345"
 	}
 

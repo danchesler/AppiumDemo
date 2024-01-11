@@ -32,7 +32,9 @@ LEVEL SANITY:
 		continue shopping
 		logout
 		
-	make purchase, customize, rate, verify product info is correct throughout checkout
+	make purchase, customize,  verify product info is correct throughout checkout
+	
+	rate product
 		
 LEVEL A:
 	

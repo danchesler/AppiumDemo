@@ -30,6 +30,9 @@ public class PageCommon extends AndroidActions {
 	@AndroidFindBy(accessibility="open menu")
 	protected WebElement hamburgerMenu;
 	
+	@AndroidFindBy(accessibility="menu item catalog")
+	private WebElement catalogue;
+	
 	@AndroidFindBy(accessibility="menu item log in")
 	private WebElement login;
 	
@@ -42,17 +45,9 @@ public class PageCommon extends AndroidActions {
 	@AndroidFindBy(className="android.widget.Button")
 	private WebElement successLogoutBtn;
 	
-	//Element getters
-	/*
-	public WebElement getMenuElement() {
-		return hamburgerMenu;
-	}*/
-	
-	public WebElement getCartQuantityElement() {
-		return cartCount;
-	}
-	
+	//Getters
 	public int getCartQuantity() {
+		waitForElementToAppear(cartCount, driver);
 		int quantity = Integer.parseInt(cartCount.getText());
 		return quantity;
 	}
@@ -69,6 +64,10 @@ public class PageCommon extends AndroidActions {
 		hamburgerMenu.click();
 	}
 	
+	public CataloguePage selectCatalogue() {
+		catalogue.click();
+		return new CataloguePage(driver);
+	}
 	
 	public LoginPage selectLogin() {
 		login.click();
