@@ -1,6 +1,6 @@
 to do: 
-tc1 purchase not logged in
-
+move waits into action methods
+next purchase test case
 
 LEVEL SANITY:
 
@@ -32,7 +32,7 @@ LEVEL SANITY:
 		continue shopping
 		logout
 		
-		
+	make purchase, customize, rate, verify product info is correct throughout checkout
 		
 LEVEL A:
 	

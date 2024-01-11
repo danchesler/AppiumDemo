@@ -4,12 +4,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import io.appium.java_client.AppiumDriver;
 import pageObjects.CheckoutCompletePage;
 import pageObjects.CheckoutPaymentPage;
 import pageObjects.CheckoutReviewOrderPage;
@@ -20,7 +18,13 @@ import pageObjects.ProductPage;
 import testUtils.BaseTest;
 
 public class TC1_MakePurchase extends BaseTest {
-
+	
+	
+	@Test
+	public void getText() {
+		String text = "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy.";
+		cataloguePage.scrollToTextAction(text);
+	}
 	
 	@Test (dataProvider = "getUserPurchaseInfo")
 	public void SanityPurchase(HashMap<String, String> data) throws InterruptedException {
@@ -69,7 +73,6 @@ public class TC1_MakePurchase extends BaseTest {
 		payment.enterPaymentInfo(data);
 		CheckoutReviewOrderPage review = payment.reviewOrder();
 		
-		waitForElementToAppear(review.getReviewOrderElement(), driver);
 		Assert.assertEquals(review.getReviewOrderText(), "Review your order");
 		
 		//Place order and complete purchase
@@ -79,7 +82,7 @@ public class TC1_MakePurchase extends BaseTest {
 		
 		cataloguePage = complete.continueShopping();
 		
-		waitForElementToAppear(cataloguePage.getMenuElement(), driver);
+		//waitForElementToAppear(cataloguePage.getMenuElement(), driver);
 		
 		Assert.assertEquals(cataloguePage.getProductsText(), "Products");
 		
@@ -154,7 +157,7 @@ public class TC1_MakePurchase extends BaseTest {
 		
 		cataloguePage = complete.continueShopping();
 		
-		waitForElementToAppear(cataloguePage.getMenuElement(), driver);
+		//waitForElementToAppear(cataloguePage.getMenuElement(), driver);
 		
 		Assert.assertEquals(cataloguePage.getProductsText(), "Products");
 		

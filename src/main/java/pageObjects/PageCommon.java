@@ -3,11 +3,10 @@ package pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
-import utilities.AndroidActions;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import utilities.AndroidActions;
 
 //header references here
 
@@ -29,7 +28,7 @@ public class PageCommon extends AndroidActions {
 	
 	//hamburger menu locators
 	@AndroidFindBy(accessibility="open menu")
-	private WebElement hamburgerMenu;
+	protected WebElement hamburgerMenu;
 	
 	@AndroidFindBy(accessibility="menu item log in")
 	private WebElement login;
@@ -44,9 +43,10 @@ public class PageCommon extends AndroidActions {
 	private WebElement successLogoutBtn;
 	
 	//Element getters
+	/*
 	public WebElement getMenuElement() {
 		return hamburgerMenu;
-	}
+	}*/
 	
 	public WebElement getCartQuantityElement() {
 		return cartCount;
@@ -65,6 +65,7 @@ public class PageCommon extends AndroidActions {
 	
 	//Hamburger menu action methods
 	public void openMenu() {
+		waitForElementToBeClickable(hamburgerMenu, driver);
 		hamburgerMenu.click();
 	}
 	

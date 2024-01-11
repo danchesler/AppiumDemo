@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-09T14:44:43 PST" name="Default suite" finished-at="2024-01-09T14:45:50 PST" duration-ms="67151">
+  <suite started-at="2024-01-10T17:41:41 PST" name="Suite" finished-at="2024-01-10T17:42:59 PST" duration-ms="77652">
     <groups>
     </groups>
-    <test started-at="2024-01-09T14:44:43 PST" name="Default test" finished-at="2024-01-09T14:45:50 PST" duration-ms="67151">
+    <test started-at="2024-01-10T17:41:41 PST" name="SanityTest" finished-at="2024-01-10T17:42:59 PST" duration-ms="77652">
       <class name="testCases.TC1_MakePurchase">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC1_MakePurchase@273444fe]" started-at="2024-01-09T14:44:43 PST" name="ConfigureAppium" finished-at="2024-01-09T14:44:51 PST" duration-ms="7974" status="PASS">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC1_MakePurchase@5a18cd76]" started-at="2024-01-10T17:41:41 PST" name="ConfigureAppium" finished-at="2024-01-10T17:41:56 PST" duration-ms="14639" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureAppium -->
-        <test-method signature="SanityPurchaseNotLoggedIn(java.util.HashMap)[pri:0, instance:testCases.TC1_MakePurchase@273444fe]" started-at="2024-01-09T14:44:52 PST" name="SanityPurchaseNotLoggedIn" data-provider="getUserPurchaseInfo" finished-at="2024-01-09T14:45:47 PST" duration-ms="55601" status="PASS">
+        <test-method signature="SanityPurchase(java.util.HashMap)[pri:0, instance:testCases.TC1_MakePurchase@5a18cd76]" started-at="2024-01-10T17:41:56 PST" name="SanityPurchase" data-provider="getUserPurchaseInfo" finished-at="2024-01-10T17:42:55 PST" duration-ms="59499" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,12 +21,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SanityPurchaseNotLoggedIn -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC1_MakePurchase@273444fe]" started-at="2024-01-09T14:45:47 PST" name="tearDown" finished-at="2024-01-09T14:45:50 PST" duration-ms="3337" status="PASS">
+        </test-method> <!-- SanityPurchase -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC1_MakePurchase@5a18cd76]" started-at="2024-01-10T17:42:55 PST" name="tearDown" finished-at="2024-01-10T17:42:59 PST" duration-ms="3344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testCases.TC1_MakePurchase -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- SanityTest -->
+  </suite> <!-- Suite -->
 </testng-results>

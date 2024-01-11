@@ -1,7 +1,13 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -29,6 +35,13 @@ public class CheckoutReviewOrderPage extends PageCommon {
 	}
 	
 	public String getReviewOrderText() {
+		new WebDriverWait(driver, Duration.ofSeconds(10))
+			.ignoring(StaleElementReferenceException.class)
+			.until((WebDriver d) -> {
+				WebElement rev = d.findElement(By.xpath("//android.widget.TextView[contains(@text,'Review')]"));
+				String s = rev.getText();
+				return s;
+			});
 		return reviewOrderHeader.getText();
 	}
 	

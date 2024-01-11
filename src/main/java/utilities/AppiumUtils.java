@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,7 +40,15 @@ public class AppiumUtils {
 		List<HashMap<String, String>> data = mapper.readValue(jsonContent, new TypeReference<List<HashMap<String, String>>>(){});
 		
 		return data;
+	}
+	
+	public String getScreenshotPath(String testCaseName, AppiumDriver driver) throws IOException {
+		File source = driver.getScreenshotAs(OutputType.FILE);
+		String destinationPath = System.getProperty("user.dir") + "\\reports\\" + testCaseName + ".png";
+		File destination = new File(destinationPath);
+		FileUtils.copyFile(source, destination);
 		
+		return destinationPath;
 	}
 	
 	//Remove $ sign from text and return its number
@@ -48,9 +57,18 @@ public class AppiumUtils {
 		return formatted;
 	}
 	
-	//Explicit wait 10 seconds
+
+	//Explicit waits
 	public void waitForElementToAppear(WebElement e, AppiumDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(e));
 	}
+	
+	public void waitForElementToBeClickable(WebElement e, AppiumDriver driver) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(e));
+	}
+	
+	
+	
 }
