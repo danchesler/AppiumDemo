@@ -36,6 +36,7 @@ public class BaseTest extends AppiumUtils {
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName(deviceName);
 		options.setApp(System.getProperty("user.dir") + "\\src\\test\\java\\testResources\\Android-MyDemoAppRN.1.3.0.build-244.apk");
+		options.setChromedriverExecutable("C:\\Users\\super\\Desktop\\Study\\Appium\\chromedriver120\\chromedriver.exe");
 		
 		driver = new AndroidDriver(appiumServer.getUrl(), options);
 		
