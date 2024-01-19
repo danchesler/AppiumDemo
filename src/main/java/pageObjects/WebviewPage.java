@@ -49,7 +49,4 @@ public class WebviewPage extends PageCommon {
 		goToSite.click();
 		Thread.sleep(3000);
 	}
-	
-	
-	
 }

@@ -36,6 +36,9 @@ public class PageCommon extends AndroidActions {
 	@AndroidFindBy(accessibility="menu item webview")
 	private WebElement webview;
 	
+	@AndroidFindBy(accessibility="menu item about")
+	private WebElement about;
+	
 	@AndroidFindBy(accessibility="menu item log in")
 	private WebElement login;
 	
@@ -75,6 +78,11 @@ public class PageCommon extends AndroidActions {
 	public WebviewPage selectWebview() {
 		webview.click();
 		return new WebviewPage(driver);
+	}
+	
+	public AboutPage selectAbout() {
+		about.click();
+		return new AboutPage(driver);
 	}
 	
 	public LoginPage selectLogin() {

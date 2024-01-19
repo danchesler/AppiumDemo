@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-18T19:19:01 PST" name="Default suite" finished-at="2024-01-18T19:19:52 PST" duration-ms="50902">
+  <suite started-at="2024-01-19T13:29:48 PST" name="Default suite" finished-at="2024-01-19T13:30:20 PST" duration-ms="31731">
     <groups>
     </groups>
-    <test started-at="2024-01-18T19:19:01 PST" name="Default test" finished-at="2024-01-18T19:19:52 PST" duration-ms="50902">
+    <test started-at="2024-01-19T13:29:48 PST" name="Default test" finished-at="2024-01-19T13:30:20 PST" duration-ms="31731">
       <class name="testCases.TC2_MenuFeatures">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC2_MenuFeatures@470734c3]" started-at="2024-01-18T19:19:01 PST" name="ConfigureAppium" finished-at="2024-01-18T19:19:16 PST" duration-ms="15190" status="PASS">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC2_MenuFeatures@7674f035]" started-at="2024-01-19T13:29:48 PST" name="ConfigureAppium" finished-at="2024-01-19T13:30:04 PST" duration-ms="15129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureAppium -->
-        <test-method signature="WebViewTest()[pri:0, instance:testCases.TC2_MenuFeatures@470734c3]" started-at="2024-01-18T19:19:16 PST" name="WebViewTest" finished-at="2024-01-18T19:19:48 PST" duration-ms="32286" status="PASS">
+        <test-method signature="AboutPageVerification()[pri:0, instance:testCases.TC2_MenuFeatures@7674f035]" started-at="2024-01-19T13:30:04 PST" name="AboutPageVerification" finished-at="2024-01-19T13:30:17 PST" duration-ms="13216" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- WebViewTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC2_MenuFeatures@470734c3]" started-at="2024-01-18T19:19:49 PST" name="tearDown" finished-at="2024-01-18T19:19:52 PST" duration-ms="3391" status="PASS">
+        </test-method> <!-- AboutPageVerification -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC2_MenuFeatures@7674f035]" started-at="2024-01-19T13:30:17 PST" name="tearDown" finished-at="2024-01-19T13:30:20 PST" duration-ms="3356" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
