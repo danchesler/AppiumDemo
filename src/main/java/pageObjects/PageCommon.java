@@ -1,5 +1,7 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -39,6 +41,9 @@ public class PageCommon extends AndroidActions {
 	@AndroidFindBy(accessibility="menu item about")
 	private WebElement about;
 	
+	@AndroidFindBy(accessibility="menu item reset app")
+	private WebElement reset;
+	
 	@AndroidFindBy(accessibility="menu item log in")
 	private WebElement login;
 	
@@ -56,6 +61,15 @@ public class PageCommon extends AndroidActions {
 		waitForElementToAppear(cartCount, driver);
 		int quantity = Integer.parseInt(cartCount.getText());
 		return quantity;
+	}
+	
+	public boolean isCartQuantityDisplayed() {
+		try {
+			driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc='cart badge']/android.widget.TextView"));
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+		return true;
 	}
 	
 	//Header action methods
@@ -83,6 +97,10 @@ public class PageCommon extends AndroidActions {
 	public AboutPage selectAbout() {
 		about.click();
 		return new AboutPage(driver);
+	}
+	
+	public void selectReset() {
+		reset.click();;
 	}
 	
 	public LoginPage selectLogin() {

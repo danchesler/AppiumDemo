@@ -1,14 +1,20 @@
 package testCases;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pageObjects.AboutPage;
+import pageObjects.MyCartPage;
+import pageObjects.ProductPage;
 import pageObjects.WebviewPage;
 import testUtils.BaseTest;
 
@@ -76,8 +82,42 @@ public class TC2_MenuFeatures extends BaseTest {
 	}
 	
 	@Test
-	public void ResetAppVerification() {
+	public void ResetAppVerification() throws InterruptedException {
+		ProductPage productPage = cataloguePage.selectProduct(0);
+		productPage.addToCart();
+		Assert.assertEquals(productPage.getCartQuantity(), 1);
 		
+		productPage.openMenu();
+		cataloguePage = productPage.selectCatalogue();
+		
+		cataloguePage.openMenu();
+		cataloguePage.selectReset();
+		
+		WebElement cancel = driver.findElement(By.id("android:id/button2"));
+		cancel.click();
+		
+		cataloguePage.selectReset();
+		WebElement resetApp = driver.findElement(By.id("android:id/button1"));
+		resetApp.click();
+		Thread.sleep(2000);
+		WebElement confirmReset = driver.findElement(By.id("android:id/button1"));
+		confirmReset.click();
+		cataloguePage.selectCatalogue();
+		
+		Assert.assertFalse(cataloguePage.isCartQuantityDisplayed());
+		
+		MyCartPage cart = cataloguePage.goToCart();
+		
+		Assert.assertEquals(cart.getNoItemsText(), "No Items");
+		
+		cart.goShopping();
+	}
+	
+	@DataProvider
+	public Object[][] getUserPurchaseInfo() throws IOException {
+		List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + "\\src\\test\\java\\testData\\userPurchaseInfo.json");
+		
+		return new Object[][] { {data.get(0)} };
 	}
 	
 }

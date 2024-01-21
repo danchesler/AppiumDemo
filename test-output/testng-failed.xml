@@ -5,7 +5,7 @@
     <classes>
       <class name="testCases.TC2_MenuFeatures">
         <methods>
-          <include name="AboutPageVerification"/>
+          <include name="ResetAppVerification"/>
           <include name="ConfigureAppium"/>
           <include name="tearDown"/>
         </methods>

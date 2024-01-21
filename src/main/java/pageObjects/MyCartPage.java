@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -42,15 +43,12 @@ public class MyCartPage extends PageCommon {
 	@AndroidFindBy(accessibility="Proceed To Checkout button")
 	private WebElement checkout;
 	
-	public CheckoutShippingPage proceedToCheckout() {
-		checkout.click();
-		return new CheckoutShippingPage(driver);
-	}
+	//Cart Empty Locators
+	@AndroidFindBy(accessibility="container header")
+	private WebElement noItemsText;
 	
-	public LoginPage proceedToLoginBeforeCheckout() {
-		checkout.click();
-		return new LoginPage(driver);
-	}
+	@AndroidFindBy(accessibility="Go Shopping button")
+	private WebElement goShopping;
 	
 	//Element getters
 	public double getFormattedTotalPrice() {
@@ -88,5 +86,27 @@ public class MyCartPage extends PageCommon {
 		}
 		return sum;
 	}
+	
+	public String getNoItemsText() {
+		WebElement text = noItemsText.findElement(AppiumBy.className("android.widget.TextView"));
+		return text.getText();
+	}
+		
+	//Actions methods
+	public CheckoutShippingPage proceedToCheckout() {
+		checkout.click();
+		return new CheckoutShippingPage(driver);
+	}
+	
+	public LoginPage proceedToLoginBeforeCheckout() {
+		checkout.click();
+		return new LoginPage(driver);
+	}
+	
+	public CataloguePage goShopping() {
+		goShopping.click();
+		return new CataloguePage(driver);
+	}
+	
 	
 }
