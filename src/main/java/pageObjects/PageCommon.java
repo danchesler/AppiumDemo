@@ -108,6 +108,12 @@ public class PageCommon extends AndroidActions {
 		return new LoginPage(driver);
 	}
 	
+	public MyCartPage selectLoginWhileLoggedIn() {
+		login.click();
+		return new MyCartPage(driver);
+	}
+	
+	
 	public LoginPage logout() {
 		logout.click();
 		confirmLogoutBtn.click();

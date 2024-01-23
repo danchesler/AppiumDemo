@@ -13,6 +13,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pageObjects.AboutPage;
+import pageObjects.LoginPage;
 import pageObjects.MyCartPage;
 import pageObjects.ProductPage;
 import pageObjects.WebviewPage;
@@ -111,6 +112,36 @@ public class TC2_MenuFeatures extends BaseTest {
 		Assert.assertEquals(cart.getNoItemsText(), "No Items");
 		
 		cart.goShopping();
+	}
+	
+	/* enter incorrect username/pw
+	 * verify error msg
+	 * enter correct username/pw
+	 * check login button goes to cart
+	 */
+	
+	@Test (dataProvider="getUserPurchaseInfo")
+	public void LoginVerification(HashMap<String, String> data) {
+		cataloguePage.openMenu();
+		LoginPage login = cataloguePage.selectLogin();
+		
+		login.enterUsername(data.get("username") + "a");
+		login.enterPassword(data.get("password"));
+		login.loginFromMenu();
+		
+		Assert.assertEquals(login.getErrorMessage(), "Provided credentials do not match any user in this service.");
+		
+		login.clearUsernameText();
+		login.enterUsername(data.get("username"));
+		cataloguePage = login.loginFromMenu();
+		cataloguePage.openMenu();
+		
+		MyCartPage cart = cataloguePage.selectLoginWhileLoggedIn();
+		
+		Assert.assertEquals(cart.getNoItemsText(), "No Items");
+	
+		cart.openMenu();
+		cart.selectCatalogue();
 	}
 	
 	@DataProvider

@@ -5,9 +5,9 @@
     <classes>
       <class name="testCases.TC2_MenuFeatures">
         <methods>
-          <include name="ResetAppVerification"/>
           <include name="ConfigureAppium"/>
           <include name="tearDown"/>
+          <include name="LoginVerification" invocation-numbers="0"/>
         </methods>
       </class> <!-- testCases.TC2_MenuFeatures -->
     </classes>

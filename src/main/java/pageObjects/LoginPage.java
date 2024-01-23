@@ -26,6 +26,9 @@ public class LoginPage extends PageCommon {
 	@AndroidFindBy(accessibility="Password input field")
 	private WebElement passwordField;
 	
+	@AndroidFindBy(accessibility="generic-error-message")
+	private WebElement errorMsg;
+	
 	@AndroidFindBy(accessibility="Login button")
 	private WebElement loginBtn;
 	
@@ -35,12 +38,22 @@ public class LoginPage extends PageCommon {
 		return loginText.getText();
 	}
 	
+	public String getErrorMessage() {
+		WebElement text = errorMsg.findElement(AppiumBy.className("android.widget.TextView"));
+		return text.getText();
+	}
+	
+	//Actions methods
 	public void enterUsername(String username) {
 		usernameField.sendKeys(username);
 	}
 	
 	public void enterPassword(String password) {
 		passwordField.sendKeys(password);
+	}
+	
+	public void clearUsernameText() {
+		usernameField.clear();
 	}
 	
 	public CataloguePage loginFromMenu() {
@@ -51,6 +64,11 @@ public class LoginPage extends PageCommon {
 	public CheckoutShippingPage checkoutAfterLogin() {
 		loginBtn.click();
 		return new CheckoutShippingPage(driver);
+	}
+	
+	public MyCartPage selectLoginWhileLoggedIn() {
+		loginBtn.click();
+		return new MyCartPage(driver);
 	}
 	
 }
