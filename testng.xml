@@ -6,12 +6,15 @@
 	</listeners>
 	
   <test thread-count="5" name="SanityTest">
+	  <groups>
+		  <run>
+			  <exclude name="hybrid"/>
+		  </run>
+	  </groups>
 	  <classes>
-		  <class name="testCases.TC1_MakePurchase">
-			  <methods>
-				  <include name="ReviewOrderVerification"/>
-			  </methods>
-		  </class>
+		  <class name="testCases.TC2_MenuFeatures"/>
 	  </classes>
   </test> <!-- Test -->
+  
+  
 </suite> <!-- Suite -->

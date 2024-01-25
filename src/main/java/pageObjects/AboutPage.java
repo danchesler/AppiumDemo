@@ -37,7 +37,8 @@ public class AboutPage extends PageCommon {
 	}
 	
 	//Action Methods
-	public void goToWebSite() {
+	public BrowserView goToWebSite() {
 		websiteLink.click();
+		return new BrowserView(driver);
 	}
 }

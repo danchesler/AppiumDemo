@@ -45,8 +45,9 @@ public class WebviewPage extends PageCommon {
 		inputField.sendKeys(url);
 	}
 	
-	public void goToSite() throws InterruptedException {
+	public BrowserView goToSite() throws InterruptedException {
 		goToSite.click();
 		Thread.sleep(3000);
+		return new BrowserView(driver);
 	}
 }

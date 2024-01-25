@@ -13,6 +13,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pageObjects.AboutPage;
+import pageObjects.BrowserView;
 import pageObjects.LoginPage;
 import pageObjects.MyCartPage;
 import pageObjects.ProductPage;
@@ -21,12 +22,10 @@ import testUtils.BaseTest;
 
 public class TC2_MenuFeatures extends BaseTest {
 
-	@Test
+	@Test (groups = {"hybrid"})
 	public void WebviewTest() throws InterruptedException {
 		cataloguePage.openMenu();
 		WebviewPage webview = cataloguePage.selectWebview();
-		
-		System.out.println(webview.getHeaderText());
 	
 		Assert.assertEquals(webview.getHeaderText(), "Webview");
 		
@@ -36,8 +35,7 @@ public class TC2_MenuFeatures extends BaseTest {
 		Assert.assertEquals(webview.getErrorText(), "Please provide a correct https url.");
 		
 		webview.enterUrl("https://www.google.com");
-		webview.goToSite();
-		
+		BrowserView browser = webview.goToSite();
 		
 		/*
 		 * NATIVE_APP
@@ -45,20 +43,18 @@ public class TC2_MenuFeatures extends BaseTest {
 		 */
 		
 		driver.context("WEBVIEW_com.saucelabs.mydemoapp.rn");
-		driver.findElement(By.name("q")).sendKeys("reddit");
-		driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+		browser.googleSearchAction();
+		
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//div[@role='link'])[1]")).click();
-		Thread.sleep(2000);
 		
 		driver.context("NATIVE_APP");
 		driver.navigate().back();
 		
 		webview.openMenu();
-		cataloguePage = webview.selectCatalogue();
+		cataloguePage = webview.selectCatalogue(); 
 	}
 	
-	@Test
+	@Test (groups = {"hybrid"})
 	public void AboutPageVerification() {
 		cataloguePage.openMenu();
 		AboutPage about = cataloguePage.selectAbout();
@@ -66,7 +62,7 @@ public class TC2_MenuFeatures extends BaseTest {
 		Assert.assertEquals(about.getHeaderText(), "About");
 		Assert.assertEquals(about.getVersionText(), "V.1.3.0-build 244 by ");
 		
-		about.goToWebSite();
+		BrowserView browser = about.goToWebSite();
 		
 		/*
 		 * NATIVE_APP
@@ -74,10 +70,12 @@ public class TC2_MenuFeatures extends BaseTest {
 		 */
 		
 		driver.context("WEBVIEW_chrome");
-		WebElement sauceLabs = driver.findElement(By.xpath("//img[@alt='Saucelabs']"));
-		Assert.assertEquals(sauceLabs.getAttribute("alt"), "Saucelabs");
+		
+		Assert.assertEquals(browser.getSauceLabsTitle(), "Saucelabs");
+		
 		driver.context("NATIVE_APP");
 		driver.navigate().back();
+		
 		about.openMenu();
 		cataloguePage = about.selectCatalogue();
 	}

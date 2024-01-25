@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-22T17:55:53 PST" name="Default suite" finished-at="2024-01-22T17:56:21 PST" duration-ms="28207">
+  <suite started-at="2024-01-24T15:54:37 PST" name="Suite" finished-at="2024-01-24T15:55:44 PST" duration-ms="66656">
     <groups>
     </groups>
-    <test started-at="2024-01-22T17:55:53 PST" name="Default test" finished-at="2024-01-22T17:56:21 PST" duration-ms="28207">
+    <test started-at="2024-01-24T15:54:37 PST" name="SanityTest" finished-at="2024-01-24T15:55:44 PST" duration-ms="66656">
       <class name="testCases.TC2_MenuFeatures">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC2_MenuFeatures@663c9e7a]" started-at="2024-01-22T17:55:53 PST" name="ConfigureAppium" finished-at="2024-01-22T17:56:01 PST" duration-ms="8097" status="PASS">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC2_MenuFeatures@48e92c5c]" started-at="2024-01-24T15:54:37 PST" name="ConfigureAppium" finished-at="2024-01-24T15:54:52 PST" duration-ms="15094" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureAppium -->
-        <test-method signature="LoginVerification(java.util.HashMap)[pri:0, instance:testCases.TC2_MenuFeatures@663c9e7a]" started-at="2024-01-22T17:56:01 PST" name="LoginVerification" data-provider="getUserPurchaseInfo" finished-at="2024-01-22T17:56:18 PST" duration-ms="16566" status="PASS">
+        <test-method signature="LoginVerification(java.util.HashMap)[pri:0, instance:testCases.TC2_MenuFeatures@48e92c5c]" started-at="2024-01-24T15:54:53 PST" name="LoginVerification" data-provider="getUserPurchaseInfo" finished-at="2024-01-24T15:55:10 PST" duration-ms="17296" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,11 +22,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginVerification -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC2_MenuFeatures@663c9e7a]" started-at="2024-01-22T17:56:18 PST" name="tearDown" finished-at="2024-01-22T17:56:21 PST" duration-ms="3307" status="PASS">
+        <test-method signature="ResetAppVerification()[pri:0, instance:testCases.TC2_MenuFeatures@48e92c5c]" started-at="2024-01-24T15:55:10 PST" name="ResetAppVerification" finished-at="2024-01-24T15:55:41 PST" duration-ms="30691" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResetAppVerification -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC2_MenuFeatures@48e92c5c]" started-at="2024-01-24T15:55:41 PST" name="tearDown" finished-at="2024-01-24T15:55:44 PST" duration-ms="3368" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- testCases.TC2_MenuFeatures -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- SanityTest -->
+  </suite> <!-- Suite -->
 </testng-results>

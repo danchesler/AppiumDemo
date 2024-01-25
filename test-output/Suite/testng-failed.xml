@@ -6,14 +6,16 @@
   </listeners>
   <test thread-count="5" name="SanityTest(failed)">
     <classes>
-      <class name="testCases.TC1_MakePurchase">
+      <class name="testCases.TC2_MenuFeatures">
         <methods>
+          <include name="WebviewTest"/>
+          <include name="AboutPageVerification"/>
+          <include name="ResetAppVerification"/>
           <include name="ConfigureAppium"/>
-          <include name="GoToHomePage"/>
           <include name="tearDown"/>
-          <include name="ReviewOrderVerification" invocation-numbers="0"/>
+          <include name="LoginVerification" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testCases.TC1_MakePurchase -->
+      </class> <!-- testCases.TC2_MenuFeatures -->
     </classes>
   </test> <!-- SanityTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->
