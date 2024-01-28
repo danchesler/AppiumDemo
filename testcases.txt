@@ -1,7 +1,15 @@
 to do: 
 
+catalogue specific TC
+
+rate
+
+verify footer
 
 
+
+
+test browserview/hybrid app
 
 LEVEL SANITY:
 
@@ -35,7 +43,6 @@ LEVEL SANITY:
 		
 	make purchase, customize,  verify product info is correct throughout checkout
 	
-	rate product
 		
 LEVEL A:
 	

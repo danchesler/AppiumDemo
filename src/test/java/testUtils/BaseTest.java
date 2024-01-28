@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -21,7 +23,7 @@ public class BaseTest extends AppiumUtils {
 	public AppiumDriverLocalService appiumServer;
 	public CataloguePage cataloguePage;
 	
-	@BeforeTest
+	@BeforeClass
 	public void ConfigureAppium() throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\resources\\data.properties");
@@ -45,7 +47,7 @@ public class BaseTest extends AppiumUtils {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(3000);
 		

@@ -7,12 +7,8 @@
 	
   <test thread-count="5" name="SanityTest">
 	  <classes>
-		  <class name="testCases.TC1_MakePurchase">
-			  <methods>
-				  <include name="Test1"/>
-				  <include name="Test2"/>
-			  </methods>
-		  </class>
+		  <class name="testCases.TestClass1"/>
+		  <class name="testCases.TestClass2"/>
 	  </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC2_MenuFeatures">
+      <class name="testCases.TC3_CatalogueTests">
         <methods>
-          <include name="WebviewTest"/>
           <include name="ConfigureAppium"/>
+          <include name="AscendingPriceSortVerification"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- testCases.TC2_MenuFeatures -->
+      </class> <!-- testCases.TC3_CatalogueTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

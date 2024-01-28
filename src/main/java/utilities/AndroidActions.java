@@ -13,8 +13,19 @@ public class AndroidActions extends AppiumUtils {
 	// Javascript executor techniques not working for this app
 	public void scrollToTextAction(String text) {
 		//driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + text + "\"));"));
+		//scroll down to text
 		driver.findElement(AppiumBy.androidUIAutomator(
-				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\").instance(0))")); //scroll down to the element and click
+				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\").instance(0))"));
+	}
+	
+	public void scrollToBottom() {
+		String text = "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy.";
+		scrollToTextAction(text);
+	}
+	
+	public void scrollToTop() {
+		driver.findElement(AppiumBy.androidUIAutomator(
+				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollToBeginning(1)"));
 	}
 
 }
