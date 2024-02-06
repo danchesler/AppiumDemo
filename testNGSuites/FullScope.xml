@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="testUtils.Listeners"/>
+	</listeners>
+	
+  <test thread-count="5" name="E2E Purchase Tests">
+	  <classes>
+		  <class name="testCases.TC1_MakePurchase"/>
+	  </classes>
+  </test> <!-- Test -->
+  
+   <test thread-count="5" name="Menu Features Tests">
+	  <classes>
+		 <class name="testCases.TC2_MenuFeatures"/>
+	  </classes>
+  </test> <!-- Test -->
+  
+   <test thread-count="5" name="Catalogue Tests">
+	  <classes>
+		 <class name="testCases.TC3_CatalogueTests"/>
+	  </classes>
+  </test> <!-- Test -->
+  
+  
+</suite> <!-- Suite -->

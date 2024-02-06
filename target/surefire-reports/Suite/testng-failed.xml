@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="testUtils.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="SanityTest(failed)" verbose="0">
+    <groups>
+      <run>
+        <include name="hybrid"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="testCases.TC2_MenuFeatures">
+        <methods>
+          <include name="AboutPageVerification"/>
+          <include name="WebviewTest"/>
+          <include name="ConfigureAppium"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testCases.TC2_MenuFeatures -->
+    </classes>
+  </test> <!-- SanityTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

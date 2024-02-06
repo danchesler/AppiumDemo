@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+	<groups>
+		<run>
+			<include name="sorting"/>
+		</run>
+	</groups>
+	
 	<listeners>
 		<listener class-name="testUtils.Listeners"/>
 	</listeners>
-	
+
   <test thread-count="5" name="SanityTest">
-	  <groups>
-		  <run>
-			  <exclude name="hybrid"/>
-		  </run>
-	  </groups>
 	  <classes>
-		  <class name="testCases.TC2_MenuFeatures"/>
+		  <class name="testCases.TC3_CatalogueTests"/>
 	  </classes>
   </test> <!-- Test -->
-  
   
 </suite> <!-- Suite -->

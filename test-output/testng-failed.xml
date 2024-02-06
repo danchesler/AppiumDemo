@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC3_CatalogueTests">
+      <class name="testCases.TC1_MakePurchase">
         <methods>
           <include name="ConfigureAppium"/>
-          <include name="AscendingPriceSortVerification"/>
+          <include name="GoToHomePage"/>
           <include name="tearDown"/>
+          <include name="ReviewOrderVerification" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testCases.TC3_CatalogueTests -->
+      </class> <!-- testCases.TC1_MakePurchase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -26,13 +26,7 @@ public class TC1_MakePurchase extends BaseTest {
 		cataloguePage.selectCatalogue();
 	}
 	
-	@Test
-	public void getText() {
-		String text = "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy.";
-		cataloguePage.scrollToTextAction(text);
-	}
-	
-	@Test (dataProvider = "getUserPurchaseInfo")
+	@Test (dataProvider = "getUserPurchaseInfo", priority = 1)
 	public void SanityPurchase(HashMap<String, String> data) throws InterruptedException {
 		Assert.assertEquals(cataloguePage.getProductsText(), "Products");
 		
@@ -96,7 +90,7 @@ public class TC1_MakePurchase extends BaseTest {
 		
 	}
 	
-	@Test (dataProvider="getUserPurchaseInfo")
+	@Test (dataProvider="getUserPurchaseInfo", priority = 2)
 	public void SanityPurchaseNotLoggedIn(HashMap<String, String> data) throws InterruptedException {
 		Assert.assertEquals(cataloguePage.getProductsText(), "Products");
 		
@@ -166,7 +160,7 @@ public class TC1_MakePurchase extends BaseTest {
 		Assert.assertEquals(loginPage.getLoginHeader(), "Login");
 	}
 	
-	@Test (dataProvider="getUserPurchaseInfo")
+	@Test (dataProvider="getUserPurchaseInfo", priority = 3)
 	public void ReviewOrderVerification(HashMap<String, String> data) throws InterruptedException {
 		Assert.assertEquals(cataloguePage.getProductsText(), "Products");
 		

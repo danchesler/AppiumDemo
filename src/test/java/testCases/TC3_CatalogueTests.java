@@ -11,7 +11,7 @@ import testUtils.BaseTest;
 
 public class TC3_CatalogueTests extends BaseTest {
 	
-	@Test
+	@Test (groups= {"sorting"})
 	public void AscendingNameSortVerification() {
 		cataloguePage.clickSortButton();
 		cataloguePage.selectNameAsc();
@@ -38,7 +38,7 @@ public class TC3_CatalogueTests extends BaseTest {
 		cataloguePage.scrollToTop();
 	}
 	
-	@Test
+	@Test (groups= {"sorting"})
 	public void DescendingNameSortVerification() {
 		cataloguePage.clickSortButton();
 		cataloguePage.selectNameDesc();
@@ -68,7 +68,7 @@ public class TC3_CatalogueTests extends BaseTest {
 		cataloguePage.scrollToTop();
 	}
 	
-	@Test
+	@Test (groups= {"sorting"})
 	public void AscendingPriceSortVerification() {
 		cataloguePage.clickSortButton();
 		cataloguePage.selectPriceAsc();
@@ -95,7 +95,7 @@ public class TC3_CatalogueTests extends BaseTest {
 		cataloguePage.scrollToTop();
 	}
 	
-	@Test
+	@Test (groups= {"sorting"})
 	public void DescendingPriceSortVerification() {
 		cataloguePage.clickSortButton();
 		cataloguePage.selectPriceDesc();

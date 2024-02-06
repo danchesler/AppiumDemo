@@ -1,16 +1,5 @@
 to do: 
 
-catalogue specific TC
-
-rate
-
-verify footer
-
-
-
-
-test browserview/hybrid app
-
 LEVEL SANITY:
 
 	TC1 make purchase 

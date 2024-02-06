@@ -4,18 +4,16 @@
   <listeners>
     <listener class-name="testUtils.Listeners"/>
   </listeners>
-  <test thread-count="5" name="SanityTest(failed)">
+  <test thread-count="5" name="FullScopeTest(failed)">
     <classes>
-      <class name="testCases.TC2_MenuFeatures">
+      <class name="testCases.TC1_MakePurchase">
         <methods>
-          <include name="WebviewTest"/>
-          <include name="AboutPageVerification"/>
-          <include name="ResetAppVerification"/>
           <include name="ConfigureAppium"/>
           <include name="tearDown"/>
-          <include name="LoginVerification" invocation-numbers="0"/>
+          <include name="GoToHomePage"/>
+          <include name="ReviewOrderVerification" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testCases.TC2_MenuFeatures -->
+      </class> <!-- testCases.TC1_MakePurchase -->
     </classes>
-  </test> <!-- SanityTest(failed) -->
+  </test> <!-- FullScopeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

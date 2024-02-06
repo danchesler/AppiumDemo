@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-28T14:06:07 PST" name="Default suite" finished-at="2024-01-28T14:06:25 PST" duration-ms="18195">
+  <suite started-at="2024-02-05T21:39:08 PST" name="Suite" finished-at="2024-02-05T21:40:08 PST" duration-ms="60677">
     <groups>
+      <group name="hybrid">
+        <method signature="TC2_MenuFeatures.AboutPageVerification()[pri:0, instance:testCases.TC2_MenuFeatures@525575]" name="AboutPageVerification" class="testCases.TC2_MenuFeatures"/>
+        <method signature="TC2_MenuFeatures.WebviewTest()[pri:0, instance:testCases.TC2_MenuFeatures@525575]" name="WebviewTest" class="testCases.TC2_MenuFeatures"/>
+      </group> <!-- hybrid -->
     </groups>
-    <test started-at="2024-01-28T14:06:07 PST" name="Default test" finished-at="2024-01-28T14:06:25 PST" duration-ms="18195">
-      <class name="testCases.TC3_CatalogueTests">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC3_CatalogueTests@25ce9dc4]" started-at="2024-01-28T14:06:07 PST" name="ConfigureAppium" finished-at="2024-01-28T14:06:16 PST" duration-ms="9168" status="PASS">
+    <test started-at="2024-02-05T21:39:08 PST" name="SanityTest" finished-at="2024-02-05T21:40:08 PST" duration-ms="60677">
+      <class name="testCases.TC2_MenuFeatures">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC2_MenuFeatures@525575]" started-at="2024-02-05T21:39:08 PST" name="ConfigureAppium" finished-at="2024-02-05T21:39:24 PST" duration-ms="16771" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureAppium -->
-        <test-method signature="FooterVerification()[pri:0, instance:testCases.TC3_CatalogueTests@25ce9dc4]" started-at="2024-01-28T14:06:16 PST" name="FooterVerification" finished-at="2024-01-28T14:06:21 PST" duration-ms="5668" status="PASS">
+        <test-method signature="AboutPageVerification()[pri:0, instance:testCases.TC2_MenuFeatures@525575]" started-at="2024-02-05T21:39:24 PST" name="AboutPageVerification" finished-at="2024-02-05T21:39:38 PST" duration-ms="13591" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FooterVerification -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC3_CatalogueTests@25ce9dc4]" started-at="2024-01-28T14:06:21 PST" name="tearDown" finished-at="2024-01-28T14:06:25 PST" duration-ms="3324" status="PASS">
+        </test-method> <!-- AboutPageVerification -->
+        <test-method signature="WebviewTest()[pri:0, instance:testCases.TC2_MenuFeatures@525575]" started-at="2024-02-05T21:39:38 PST" name="WebviewTest" finished-at="2024-02-05T21:40:05 PST" duration-ms="26917" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WebviewTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC2_MenuFeatures@525575]" started-at="2024-02-05T21:40:05 PST" name="tearDown" finished-at="2024-02-05T21:40:08 PST" duration-ms="3361" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC3_CatalogueTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- testCases.TC2_MenuFeatures -->
+    </test> <!-- SanityTest -->
+  </suite> <!-- Suite -->
 </testng-results>

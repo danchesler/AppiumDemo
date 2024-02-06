@@ -23,7 +23,7 @@ public class BaseTest extends AppiumUtils {
 	public AppiumDriverLocalService appiumServer;
 	public CataloguePage cataloguePage;
 	
-	@BeforeClass
+	@BeforeClass (alwaysRun = true)
 	public void ConfigureAppium() throws IOException {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\resources\\data.properties");
@@ -47,7 +47,7 @@ public class BaseTest extends AppiumUtils {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
-	@AfterClass
+	@AfterClass (alwaysRun = true)
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(3000);
 		

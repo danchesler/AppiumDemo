@@ -12,7 +12,6 @@ public class AndroidActions extends AppiumUtils {
 	
 	// Javascript executor techniques not working for this app
 	public void scrollToTextAction(String text) {
-		//driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + text + "\"));"));
 		//scroll down to text
 		driver.findElement(AppiumBy.androidUIAutomator(
 				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + text + "\").instance(0))"));
