@@ -11,11 +11,11 @@ public class ExtentReporterBase {
 	@BeforeTest
 	public static ExtentReports getReporterObject() {
 		
-		String path = System.getProperty("user.dir") + "\\reports\\index.html";
+		String path = System.getProperty("user.dir") + "\\reports\\report.html";
 		
 		//configure report doc
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
-		reporter.config().setReportName("Web Automation Results");
+		reporter.config().setReportName("App Automation Results");
 		reporter.config().setDocumentTitle("Test Results");
 		
 		//monitors test to get info to put in report

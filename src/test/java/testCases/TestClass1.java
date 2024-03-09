@@ -6,6 +6,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 import testUtils.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +23,14 @@ public class TestClass1 {
 		driver.get("https://www.google.com");
 		
 		driver.switchTo();
+	}
+	
+	
+	@Test
+	public void softassert() {
+		SoftAssert softAssert = new SoftAssert();
+		
+
 	}
 	
 }

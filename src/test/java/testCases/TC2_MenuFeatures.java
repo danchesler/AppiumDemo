@@ -10,6 +10,8 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import pageObjects.AboutPage;
 import pageObjects.BrowserView;
 import pageObjects.LoginPage;
@@ -46,7 +48,8 @@ public class TC2_MenuFeatures extends BaseTest {
 		Thread.sleep(3000);
 		
 		driver.context("NATIVE_APP");
-		driver.navigate().back();
+		//driver.navigate().back();
+		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 		
 		webview.openMenu();
 		cataloguePage = webview.selectCatalogue(); 
