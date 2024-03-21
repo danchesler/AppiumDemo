@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.openqa.selenium.Keys;
@@ -24,7 +25,7 @@ public class BrowserView {
 		this.contexts = driver.getContextHandles();
 	}
 	
-	@FindBy(xpath="//img[@alt='Saucelabs']") 
+	@FindBy(css=".MuiBox-root.MuiBox-root.css-lwb5go img[alt='Saucelabs']") 
 	private WebElement sauceLabs;
 	
 	@FindBy(name="q")

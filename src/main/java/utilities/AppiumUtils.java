@@ -57,7 +57,6 @@ public class AppiumUtils {
 		return formatted;
 	}
 	
-
 	//Explicit waits
 	public void waitForElementToAppear(WebElement e, AppiumDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

@@ -38,6 +38,9 @@ public class PageCommon extends AndroidActions {
 	@AndroidFindBy(accessibility="menu item webview")
 	private WebElement webview;
 	
+	@AndroidFindBy(accessibility="menu item geo location")
+	private WebElement geolocation;
+	
 	@AndroidFindBy(accessibility="menu item about")
 	private WebElement about;
 	
@@ -55,6 +58,13 @@ public class PageCommon extends AndroidActions {
 	
 	@AndroidFindBy(className="android.widget.Button")
 	private WebElement successLogoutBtn;
+	
+	//Android system locators
+	@AndroidFindBy(id="com.android.permissioncontroller:id/permission_deny_button")
+	private WebElement denyLocation;
+	
+	@AndroidFindBy(id="com.android.permissioncontroller:id/permission_allow_foreground_only_button")
+	private WebElement alwaysAllowLocation;
 	
 	//Getters
 	public int getCartQuantity() {
@@ -94,6 +104,11 @@ public class PageCommon extends AndroidActions {
 		return new WebviewPage(driver);
 	}
 	
+	public GeoLocationPage selectGeoLocation() {
+		geolocation.click();
+		return new GeoLocationPage(driver);
+	}
+	
 	public AboutPage selectAbout() {
 		about.click();
 		return new AboutPage(driver);
@@ -121,5 +136,13 @@ public class PageCommon extends AndroidActions {
 		return new LoginPage(driver);
 	}
 	
+	//Android system actions
+	public void dontAllowLocation() {
+		denyLocation.click();
+	}
+	
+	public void alwaysAllowLocation() {
+		alwaysAllowLocation.click();
+	}
 	
 }

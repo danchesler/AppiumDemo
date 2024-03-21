@@ -2,7 +2,9 @@ package testCases;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -14,6 +16,7 @@ import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import pageObjects.AboutPage;
 import pageObjects.BrowserView;
+import pageObjects.GeoLocationPage;
 import pageObjects.LoginPage;
 import pageObjects.MyCartPage;
 import pageObjects.ProductPage;
@@ -42,6 +45,12 @@ public class TC2_MenuFeatures extends BaseTest {
 		 * WEBVIEW_com.saucelabs.mydemoapp.rn
 		 */
 		
+		Set<String> set = driver.getContextHandles();
+		Iterator<String> itr = set.iterator();
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		
 		driver.context("WEBVIEW_com.saucelabs.mydemoapp.rn");
 		browser.googleSearchAction();
 		
@@ -55,8 +64,23 @@ public class TC2_MenuFeatures extends BaseTest {
 		cataloguePage = webview.selectCatalogue(); 
 	}
 	
+	@Test
+	public void GeoLocationVerification() {
+		cataloguePage.openMenu();
+		GeoLocationPage geo = cataloguePage.selectGeoLocation();
+		geo.dontAllowLocation();
+		geo.startObservingLocation();
+		geo.alwaysAllowLocation();
+		
+		Assert.assertNotEquals(geo.getLatitudeAfterEnablingLocation(), "0");
+		Assert.assertNotEquals(geo.getLogitudeAfterEnablingLocation(), "0");
+		
+		geo.openMenu();
+		geo.selectCatalogue();
+	}
+	
 	@Test (groups = {"hybrid"})
-	public void AboutPageVerification() {
+	public void AboutPageVerification() throws InterruptedException {
 		cataloguePage.openMenu();
 		AboutPage about = cataloguePage.selectAbout();
 		
