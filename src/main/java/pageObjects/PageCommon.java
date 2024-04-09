@@ -2,6 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -56,6 +58,9 @@ public class PageCommon extends AndroidActions {
 	@AndroidFindBy(id="android:id/button1")
 	private WebElement confirmLogoutBtn;
 	
+	@AndroidFindBy(id="android:id/button2")
+	private WebElement cancelLogoutBtn;
+	
 	@AndroidFindBy(className="android.widget.Button")
 	private WebElement successLogoutBtn;
 	
@@ -80,6 +85,18 @@ public class PageCommon extends AndroidActions {
 			return false;
 		}
 		return true;
+	}
+	
+	public boolean isLogoutClickable() {
+		boolean isClickable = true;
+		
+		try {
+			isClickable = logout.isEnabled();
+		} catch (WebDriverException e) { //originally just stale but also encountered nosuchelement
+			isClickable = false;
+		}
+		
+		return isClickable;
 	}
 	
 	//Header action methods
@@ -120,6 +137,19 @@ public class PageCommon extends AndroidActions {
 	
 	public LoginPage selectLogin() {
 		login.click();
+		return new LoginPage(driver);
+	}
+	
+	public void selectLogout() {
+		logout.click();
+	}
+	
+	public void cancelLogout() {
+		cancelLogoutBtn.click();
+	}
+	
+	public LoginPage confirmLogout() {
+		confirmLogoutBtn.click();
 		return new LoginPage(driver);
 	}
 	

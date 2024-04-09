@@ -2,24 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-21T15:35:48 PDT" name="Default suite" finished-at="2024-03-21T15:36:12 PDT" duration-ms="24233">
+  <suite started-at="2024-04-09T15:45:59 PDT" name="Default suite" finished-at="2024-04-09T15:46:20 PDT" duration-ms="21591">
     <groups>
     </groups>
-    <test started-at="2024-03-21T15:35:48 PDT" name="Default test" finished-at="2024-03-21T15:36:12 PDT" duration-ms="24233">
-      <class name="testCases.TC2_MenuFeatures">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC2_MenuFeatures@7c137fd5]" started-at="2024-03-21T15:35:48 PDT" name="ConfigureAppium" finished-at="2024-03-21T15:35:56 PDT" duration-ms="7710" status="PASS">
+    <test started-at="2024-04-09T15:45:59 PDT" name="Default test" finished-at="2024-04-09T15:46:20 PDT" duration-ms="21591">
+      <class name="testCases.TC4_LoginTests">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC4_LoginTests@183ec003]" started-at="2024-04-09T15:45:59 PDT" name="ConfigureAppium" finished-at="2024-04-09T15:46:06 PDT" duration-ms="7435" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureAppium -->
-        <test-method signature="GeoLocationVerification()[pri:0, instance:testCases.TC2_MenuFeatures@7c137fd5]" started-at="2024-03-21T15:35:56 PDT" name="GeoLocationVerification" finished-at="2024-03-21T15:36:09 PDT" duration-ms="13090" status="PASS">
+        <test-method signature="LoginLockedAccountVerification(java.util.HashMap)[pri:0, instance:testCases.TC4_LoginTests@183ec003]" started-at="2024-04-09T15:46:06 PDT" name="LoginLockedAccountVerification" data-provider="getLockedUserInfo" finished-at="2024-04-09T15:46:17 PDT" duration-ms="10527" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=10203040, username=alice@example.com}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GeoLocationVerification -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC2_MenuFeatures@7c137fd5]" started-at="2024-03-21T15:36:09 PDT" name="tearDown" finished-at="2024-03-21T15:36:12 PDT" duration-ms="3400" status="PASS">
+        </test-method> <!-- LoginLockedAccountVerification -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC4_LoginTests@183ec003]" started-at="2024-04-09T15:46:17 PDT" name="tearDown" finished-at="2024-04-09T15:46:20 PDT" duration-ms="3419" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC2_MenuFeatures -->
+      </class> <!-- testCases.TC4_LoginTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

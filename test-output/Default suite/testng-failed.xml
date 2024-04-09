@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC2_MenuFeatures">
+      <class name="testCases.TC4_LoginTests">
         <methods>
+          <include name="LogoutVerification"/>
           <include name="ConfigureAppium"/>
           <include name="tearDown"/>
-          <include name="GeoLocationVerification"/>
         </methods>
-      </class> <!-- testCases.TC2_MenuFeatures -->
+      </class> <!-- testCases.TC4_LoginTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

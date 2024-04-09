@@ -137,41 +137,18 @@ public class TC2_MenuFeatures extends BaseTest {
 		cart.goShopping();
 	}
 	
-	/* enter incorrect username/pw
-	 * verify error msg
-	 * enter correct username/pw
-	 * check login button goes to cart
-	 */
-	
-	@Test (dataProvider="getUserPurchaseInfo")
-	public void LoginVerification(HashMap<String, String> data) {
-		cataloguePage.openMenu();
-		LoginPage login = cataloguePage.selectLogin();
-		
-		login.enterUsername(data.get("username") + "a");
-		login.enterPassword(data.get("password"));
-		login.loginFromMenu();
-		
-		Assert.assertEquals(login.getErrorMessage(), "Provided credentials do not match any user in this service.");
-		
-		login.clearUsernameText();
-		login.enterUsername(data.get("username"));
-		cataloguePage = login.loginFromMenu();
-		cataloguePage.openMenu();
-		
-		MyCartPage cart = cataloguePage.selectLoginWhileLoggedIn();
-		
-		Assert.assertEquals(cart.getNoItemsText(), "No Items");
-	
-		cart.openMenu();
-		cart.selectCatalogue();
-	}
-	
 	@DataProvider
 	public Object[][] getUserPurchaseInfo() throws IOException {
 		List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + "\\src\\test\\java\\testData\\userPurchaseInfo.json");
 		
 		return new Object[][] { {data.get(0)} };
+	}
+	
+	@DataProvider
+	public Object[][] getLockedUserInfo() throws IOException {
+		List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + "\\src\\test\\java\\testData\\userPurchaseInfo.json");
+		
+		return new Object[][] { {data.get(1)} };
 	}
 	
 }

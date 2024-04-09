@@ -32,6 +32,13 @@ public class LoginPage extends PageCommon {
 	@AndroidFindBy(accessibility="Login button")
 	private WebElement loginBtn;
 	
+	@AndroidFindBy(id="android:id/alertTitle")
+	private WebElement logoutSuccessAlert;
+	
+	//seen during logout test
+	@AndroidFindBy(id="android:id/button1")
+	private WebElement closeLogoutAlert;
+	
 	//Element getters
 	public String getLoginHeader() {
 		WebElement loginText = loginHeader.findElement(AppiumBy.className("android.widget.TextView"));
@@ -43,6 +50,10 @@ public class LoginPage extends PageCommon {
 		return text.getText();
 	}
 	
+	public String getLogoutSuccessText() {
+		return logoutSuccessAlert.getText();
+	}
+	
 	//Actions methods
 	public void enterUsername(String username) {
 		usernameField.sendKeys(username);
@@ -52,8 +63,12 @@ public class LoginPage extends PageCommon {
 		passwordField.sendKeys(password);
 	}
 	
-	public void clearUsernameText() {
+	public void clearUsernameField() {
 		usernameField.clear();
+	}
+	
+	public void clearPasswordField() {
+		passwordField.clear();
 	}
 	
 	public CataloguePage loginFromMenu() {
@@ -69,6 +84,10 @@ public class LoginPage extends PageCommon {
 	public MyCartPage selectLoginWhileLoggedIn() {
 		loginBtn.click();
 		return new MyCartPage(driver);
+	}
+	
+	public void closeLogoutAlert() {
+		closeLogoutAlert.click();
 	}
 	
 }
