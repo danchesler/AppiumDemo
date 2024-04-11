@@ -2,26 +2,16 @@ package testCases;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
-import pageObjects.AboutPage;
-import pageObjects.BrowserView;
-import pageObjects.GeoLocationPage;
 import pageObjects.LoginPage;
-import pageObjects.MyCartPage;
-import pageObjects.ProductPage;
-import pageObjects.WebviewPage;
 import testUtils.BaseTest;
 
 public class TC5_LoginTestsNegative extends BaseTest {
@@ -47,23 +37,25 @@ public class TC5_LoginTestsNegative extends BaseTest {
 		Assert.assertEquals(login.getErrorMessage(), "Sorry, this user has been locked out.");
 	}
 	
-	@Test
-	public void LoginWithUsernameNoPasswordVerification() {
+	@Parameters ( {"username"} )
+	@Test 
+	public void LoginWithUsernameNoPasswordVerification(@Optional("optionalUsername") String username) {
 		cataloguePage.openMenu();
 		login = cataloguePage.selectLogin();
 		
-		login.enterUsername("username");
+		login.enterUsername(username);
 		login.loginFromMenu();
 		
 		Assert.assertEquals(login.getNoPasswordErrorMessage(), "Password is required");
 	}
 	
+	@Parameters ( {"password"} )
 	@Test 
-	public void LoginWithPasswordNoUserNameVerification() {
+	public void LoginWithPasswordNoUserNameVerification(@Optional("OptionalPassword") String password) {
 		cataloguePage.openMenu();
 		login = cataloguePage.selectLogin();
 		
-		login.enterPassword("password");
+		login.enterPassword(password);
 		login.loginFromMenu();
 		
 		Assert.assertEquals(login.getNoUsernameErrorMessage(), "Username is required");

@@ -4,17 +4,20 @@
 	<listeners>
 		<listener class-name="testUtils.Listeners"/>
 	</listeners>
+	
+	<parameter name="username" value="randomUsername"/>
+	<parameter name="password" value="randomPassword"/>
 
   <test thread-count="5" name="Login Positive Tests">
 	  <classes>
 		  <class name="testCases.TC4_LoginTestsPositive"/>
 	  </classes>
-  </test> <!-- Test -->
+  </test>
   
-   <test thread-count="5" name="Login Negative Tests">
+  <test thread-count="5" name="Login Negative Tests">
 	  <classes>
 		  <class name="testCases.TC5_LoginTestsNegative"/>
 	  </classes>
-  </test> <!-- Test -->
+  </test> 
   
 </suite> <!-- Suite -->

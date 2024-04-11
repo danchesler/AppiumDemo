@@ -8,7 +8,7 @@
           <include name="clearFieldsThenReturnToCatalogue"/>
           <include name="ConfigureAppium"/>
           <include name="tearDown"/>
-          <include name="LoginWithPasswordNoUserNameVerification"/>
+          <include name="LoginWithUsernameNoPasswordVerification"/>
         </methods>
       </class> <!-- testCases.TC5_LoginTestsNegative -->
     </classes>

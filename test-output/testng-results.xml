@@ -1,120 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-11T14:17:41 PDT" name="Suite" finished-at="2024-04-11T14:19:31 PDT" duration-ms="110249">
+  <suite started-at="2024-04-11T14:45:40 PDT" name="Suite" finished-at="2024-04-11T14:46:11 PDT" duration-ms="31187">
     <groups>
     </groups>
-    <test started-at="2024-04-11T14:17:41 PDT" name="Login Positive Tests" finished-at="2024-04-11T14:18:15 PDT" duration-ms="34345">
-      <class name="testCases.TC4_LoginTestsPositive">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC4_LoginTestsPositive@294a6b8e]" started-at="2024-04-11T14:17:41 PDT" name="ConfigureAppium" finished-at="2024-04-11T14:17:48 PDT" duration-ms="7493" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ConfigureAppium -->
-        <test-method signature="LoginVerification(java.util.HashMap)[pri:0, instance:testCases.TC4_LoginTestsPositive@294a6b8e]" started-at="2024-04-11T14:17:48 PDT" name="LoginVerification" data-provider="getUserPurchaseInfo" finished-at="2024-04-11T14:18:01 PDT" duration-ms="12500" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{country=United States, address2=999, city=San Diego, address1=123 Test Ave, zipcode=92131, password=10203040, productcolor=blue, fullname=Bob Fisher, state=California, cardnumber=1234 1234 1234 123, securitycode=345, username=bob@example.com, expdate=06/26}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginVerification -->
-        <test-method signature="LogoutVerification()[pri:0, instance:testCases.TC4_LoginTestsPositive@294a6b8e]" started-at="2024-04-11T14:18:01 PDT" name="LogoutVerification" finished-at="2024-04-11T14:18:12 PDT" depends-on-methods="testCases.TC4_LoginTestsPositive.LoginVerification" duration-ms="10793" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LogoutVerification -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC4_LoginTestsPositive@294a6b8e]" started-at="2024-04-11T14:18:12 PDT" name="tearDown" finished-at="2024-04-11T14:18:15 PDT" duration-ms="3355" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC4_LoginTestsPositive -->
-    </test> <!-- Login Positive Tests -->
-    <test started-at="2024-04-11T14:18:15 PDT" name="Login Negative Tests" finished-at="2024-04-11T14:19:31 PDT" duration-ms="75672">
+    <test started-at="2024-04-11T14:45:40 PDT" name="Login Negative Tests" finished-at="2024-04-11T14:46:11 PDT" duration-ms="31187">
       <class name="testCases.TC5_LoginTestsNegative">
-        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:18:15 PDT" name="ConfigureAppium" finished-at="2024-04-11T14:18:21 PDT" duration-ms="5473" status="PASS">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:testCases.TC5_LoginTestsNegative@34a875b3]" started-at="2024-04-11T14:45:40 PDT" name="ConfigureAppium" finished-at="2024-04-11T14:45:47 PDT" duration-ms="7414" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ConfigureAppium -->
-        <test-method signature="LoginInvalidUsernameAndPasswordVerification(java.util.HashMap)[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:18:21 PDT" name="LoginInvalidUsernameAndPasswordVerification" data-provider="getMultipleIncorrectLoginInfo" finished-at="2024-04-11T14:18:27 PDT" duration-ms="6319" status="PASS">
+        <test-method signature="LoginWithUsernameNoPasswordVerification(java.lang.String)[pri:0, instance:testCases.TC5_LoginTestsNegative@34a875b3]" started-at="2024-04-11T14:45:47 PDT" name="LoginWithUsernameNoPasswordVerification" finished-at="2024-04-11T14:45:53 PDT" duration-ms="5539" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{password=12345678, username=tim@example.com}]]>
+                <![CDATA[randomUsername]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginInvalidUsernameAndPasswordVerification -->
-        <test-method is-config="true" signature="clearFieldsThenReturnToCatalogue()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:18:27 PDT" name="clearFieldsThenReturnToCatalogue" finished-at="2024-04-11T14:18:31 PDT" duration-ms="4329" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clearFieldsThenReturnToCatalogue -->
-        <test-method signature="LoginInvalidUsernameAndPasswordVerification(java.util.HashMap)[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:18:31 PDT" name="LoginInvalidUsernameAndPasswordVerification" data-provider="getMultipleIncorrectLoginInfo" finished-at="2024-04-11T14:18:39 PDT" duration-ms="7300" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=12345678, username=bob@example.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginInvalidUsernameAndPasswordVerification -->
-        <test-method is-config="true" signature="clearFieldsThenReturnToCatalogue()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:18:39 PDT" name="clearFieldsThenReturnToCatalogue" finished-at="2024-04-11T14:18:43 PDT" duration-ms="4310" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clearFieldsThenReturnToCatalogue -->
-        <test-method signature="LoginInvalidUsernameAndPasswordVerification(java.util.HashMap)[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:18:43 PDT" name="LoginInvalidUsernameAndPasswordVerification" data-provider="getMultipleIncorrectLoginInfo" finished-at="2024-04-11T14:18:50 PDT" duration-ms="7281" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=10203040, username=tim@example.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginInvalidUsernameAndPasswordVerification -->
-        <test-method is-config="true" signature="clearFieldsThenReturnToCatalogue()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:18:50 PDT" name="clearFieldsThenReturnToCatalogue" finished-at="2024-04-11T14:18:55 PDT" duration-ms="4360" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clearFieldsThenReturnToCatalogue -->
-        <test-method signature="LoginLockedAccountVerification(java.util.HashMap)[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:18:55 PDT" name="LoginLockedAccountVerification" data-provider="getLockedUserInfo" finished-at="2024-04-11T14:19:02 PDT" duration-ms="7660" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{password=10203040, username=alice@example.com}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginLockedAccountVerification -->
-        <test-method is-config="true" signature="clearFieldsThenReturnToCatalogue()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:19:02 PDT" name="clearFieldsThenReturnToCatalogue" finished-at="2024-04-11T14:19:07 PDT" duration-ms="4437" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clearFieldsThenReturnToCatalogue -->
-        <test-method signature="LoginWithPasswordNoUserNameVerification()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:19:07 PDT" name="LoginWithPasswordNoUserNameVerification" finished-at="2024-04-11T14:19:13 PDT" duration-ms="6334" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginWithPasswordNoUserNameVerification -->
-        <test-method is-config="true" signature="clearFieldsThenReturnToCatalogue()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:19:13 PDT" name="clearFieldsThenReturnToCatalogue" finished-at="2024-04-11T14:19:17 PDT" duration-ms="4095" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clearFieldsThenReturnToCatalogue -->
-        <test-method signature="LoginWithUsernameNoPasswordVerification()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:19:17 PDT" name="LoginWithUsernameNoPasswordVerification" finished-at="2024-04-11T14:19:24 PDT" duration-ms="6366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginWithUsernameNoPasswordVerification -->
-        <test-method is-config="true" signature="clearFieldsThenReturnToCatalogue()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:19:24 PDT" name="clearFieldsThenReturnToCatalogue" finished-at="2024-04-11T14:19:28 PDT" duration-ms="4030" status="PASS">
+        <test-method is-config="true" signature="clearFieldsThenReturnToCatalogue()[pri:0, instance:testCases.TC5_LoginTestsNegative@34a875b3]" started-at="2024-04-11T14:45:53 PDT" name="clearFieldsThenReturnToCatalogue" finished-at="2024-04-11T14:45:57 PDT" duration-ms="4155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clearFieldsThenReturnToCatalogue -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC5_LoginTestsNegative@b1712f3]" started-at="2024-04-11T14:19:28 PDT" name="tearDown" finished-at="2024-04-11T14:19:31 PDT" duration-ms="3366" status="PASS">
+        <test-method signature="LoginWithPasswordNoUserNameVerification(java.lang.String)[pri:0, instance:testCases.TC5_LoginTestsNegative@34a875b3]" started-at="2024-04-11T14:45:57 PDT" name="LoginWithPasswordNoUserNameVerification" finished-at="2024-04-11T14:46:04 PDT" duration-ms="6418" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[randomPassword]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginWithPasswordNoUserNameVerification -->
+        <test-method is-config="true" signature="clearFieldsThenReturnToCatalogue()[pri:0, instance:testCases.TC5_LoginTestsNegative@34a875b3]" started-at="2024-04-11T14:46:04 PDT" name="clearFieldsThenReturnToCatalogue" finished-at="2024-04-11T14:46:08 PDT" duration-ms="4302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearFieldsThenReturnToCatalogue -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC5_LoginTestsNegative@34a875b3]" started-at="2024-04-11T14:46:08 PDT" name="tearDown" finished-at="2024-04-11T14:46:11 PDT" duration-ms="3318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
