@@ -29,6 +29,12 @@ public class LoginPage extends PageCommon {
 	@AndroidFindBy(accessibility="generic-error-message")
 	private WebElement errorMsg;
 	
+	@AndroidFindBy(accessibility="Username-error-message")
+	private WebElement noUsernameError;
+	
+	@AndroidFindBy(accessibility="Password-error-message")
+	private WebElement noPasswordError;
+	
 	@AndroidFindBy(accessibility="Login button")
 	private WebElement loginBtn;
 	
@@ -47,6 +53,16 @@ public class LoginPage extends PageCommon {
 	
 	public String getErrorMessage() {
 		WebElement text = errorMsg.findElement(AppiumBy.className("android.widget.TextView"));
+		return text.getText();
+	}
+	
+	public String getNoUsernameErrorMessage() {
+		WebElement text = noUsernameError.findElement(AppiumBy.className("android.widget.TextView"));
+		return text.getText();
+	}
+	
+	public String getNoPasswordErrorMessage() {
+		WebElement text = noPasswordError.findElement(AppiumBy.className("android.widget.TextView"));
 		return text.getText();
 	}
 	

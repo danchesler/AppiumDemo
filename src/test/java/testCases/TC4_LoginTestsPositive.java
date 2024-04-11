@@ -9,6 +9,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -23,12 +24,13 @@ import pageObjects.ProductPage;
 import pageObjects.WebviewPage;
 import testUtils.BaseTest;
 
-public class TC4_LoginTests extends BaseTest {
+public class TC4_LoginTestsPositive extends BaseTest {
+	LoginPage login;
 	
 	@Test (dataProvider = "getUserPurchaseInfo")
 	public void LoginVerification(HashMap<String, String> data) {
 		cataloguePage.openMenu();
-		LoginPage login = cataloguePage.selectLogin();
+		login = cataloguePage.selectLogin();
 		
 		login.enterUsername(data.get("username"));
 		login.enterPassword(data.get("password"));
@@ -40,7 +42,7 @@ public class TC4_LoginTests extends BaseTest {
 		Assert.assertEquals(cart.getNoItemsText(), "No Items");
 	
 		cart.openMenu();
-		cart.selectCatalogue();
+		cataloguePage = cart.selectCatalogue();
 	}
 	
 	@Test (dependsOnMethods = {"LoginVerification"})
@@ -52,7 +54,7 @@ public class TC4_LoginTests extends BaseTest {
 		
 		cataloguePage.cancelLogout();
 		cataloguePage.selectLogout();
-		LoginPage login = cataloguePage.confirmLogout();
+		login = cataloguePage.confirmLogout();
 		
 		Assert.assertEquals(login.getLogoutSuccessText(), "You are successfully logged out.");
 		
@@ -62,61 +64,10 @@ public class TC4_LoginTests extends BaseTest {
 		login.selectCatalogue();
 	}
 	
-	@Test(dataProvider="getLockedUserInfo")
-	public void LoginLockedAccountVerification(HashMap<String, String> data) {
-		cataloguePage.openMenu();
-		LoginPage login = cataloguePage.selectLogin();
-		
-		login.enterUsername(data.get("username"));
-		login.enterPassword(data.get("password"));
-		login.loginFromMenu();
-		
-		Assert.assertEquals(login.getErrorMessage(), "Sorry, this user has been locked out.");
-		
-		login.clearUsernameField();
-		login.clearPasswordField();
-		login.openMenu();
-		login.selectCatalogue();
-	}
-	
-	@Test
-	public void LoginWithUsernameNoPasswordVerification() {
-		
-	}
-	
-	@Test 
-	public void LoginWithPasswordNoUserNameVerification() {
-		
-	}
-	
-	@Test
-	public void LoginInvalidUsernameAndPasswordVerification() {
-		
-	}
-	
-	@Test
-	public void LoginCorrectUserNameInvalidPassword() {
-		
-	}
-	
-	@Test
-	public void LoginCorrectPasswordInvalidUsername() {
-		
-	}
-	
-	
 	@DataProvider
 	public Object[][] getUserPurchaseInfo() throws IOException {
 		List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + "\\src\\test\\java\\testData\\userPurchaseInfo.json");
 		
 		return new Object[][] { {data.get(0)} };
 	}
-	
-	@DataProvider
-	public Object[][] getLockedUserInfo() throws IOException {
-		List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + "\\src\\test\\java\\testData\\userPurchaseInfo.json");
-		
-		return new Object[][] { {data.get(1)} };
-	}
-	
 }

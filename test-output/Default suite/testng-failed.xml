@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC4_LoginTests">
+      <class name="testCases.TC5_LoginTestsNegative">
         <methods>
-          <include name="LogoutVerification"/>
+          <include name="clearFieldsThenReturnToCatalogue"/>
           <include name="ConfigureAppium"/>
           <include name="tearDown"/>
+          <include name="LoginWithPasswordNoUserNameVerification"/>
         </methods>
-      </class> <!-- testCases.TC4_LoginTests -->
+      </class> <!-- testCases.TC5_LoginTestsNegative -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

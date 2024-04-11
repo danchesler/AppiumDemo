@@ -137,6 +137,25 @@ public class TC2_MenuFeatures extends BaseTest {
 		cart.goShopping();
 	}
 	
+	@Test
+	public void LogoutVerification() {
+		cataloguePage.openMenu();
+		cataloguePage.selectLogout();
+	
+		Assert.assertFalse(cataloguePage.isLogoutClickable());
+		
+		cataloguePage.cancelLogout();
+		cataloguePage.selectLogout();
+		LoginPage login = cataloguePage.confirmLogout();
+		
+		Assert.assertEquals(login.getLogoutSuccessText(), "You are successfully logged out.");
+		
+		login.closeLogoutAlert();
+		
+		login.openMenu();
+		login.selectCatalogue();
+	}
+	
 	@DataProvider
 	public Object[][] getUserPurchaseInfo() throws IOException {
 		List<HashMap<String, String>> data = getJsonData(System.getProperty("user.dir") + "\\src\\test\\java\\testData\\userPurchaseInfo.json");
